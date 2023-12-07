@@ -244,42 +244,6 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: CurvedNavigationBar(
-        height: 60,
-        items: const [
-          Icon(
-            Icons.home,
-            size: 35,
-            color: Colors.white,
-          ),
-          Icon(
-            Icons.search,
-            size: 30,
-            color: Colors.white,
-          ),
-          Icon(
-            Icons.favorite,
-            size: 30,
-            color: Colors.white,
-          ),
-          Icon(
-            Icons.call_split,
-            size: 30,
-            color: Colors.white,
-          ),
-          Icon(
-            Icons.perm_identity,
-            size: 30,
-            color: Colors.white,
-          ),
-        ],
-        color: Colors.blue,
-        buttonBackgroundColor: makeup,
-        backgroundColor: Colors.white,
-        animationCurve: Curves.easeInOut,
-        animationDuration: const Duration(milliseconds: 600),
-        letIndexChange: (index) => true,
-      ),
     );
   }
 }
