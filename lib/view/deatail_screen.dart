@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
 
 import '../model/shoe_model.dart';

@@ -11,7 +11,6 @@ class ShoeData {
   final List<int> size;
   final String description;
   final List<Color> moreColor;
-
   ShoeData({
     required this.id,
     required this.name,

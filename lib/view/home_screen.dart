@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:simple_shadow/simple_shadow.dart';
 import 'package:badges/badges.dart' as badges;
 import '../model/category_model.dart';
@@ -96,12 +97,9 @@ class HomeScreen extends StatelessWidget {
                                 children: [
                                   GestureDetector(
                                     onTap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => DetailScreen(
-                                            data: listShoe[index],
-                                          ),
+                                      Get.to(
+                                        DetailScreen(
+                                          data: listShoe[index],
                                         ),
                                       );
                                     },
@@ -111,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                                       children: [
                                         SizedBox(
                                           width: double.infinity,
-                                          height: 180,
+                                          height: 150,
                                           child: Center(
                                             child: SimpleShadow(
                                               opacity: 0.8,
@@ -187,7 +185,7 @@ class HomeScreen extends StatelessWidget {
                         );
                       }),
                       options: CarouselOptions(
-                        height: 290,
+                        height: 250,
                         aspectRatio: 16 / 9,
                         viewportFraction: 0.6,
                         initialPage: 3,
