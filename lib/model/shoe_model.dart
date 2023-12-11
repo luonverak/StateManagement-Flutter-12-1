@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ShoeData {
   final int id;
@@ -7,7 +8,7 @@ class ShoeData {
   final String image;
   final Color color;
   late bool favorite;
-  late int counter;
+  late RxInt counter;
   final List<int> size;
   final String description;
   final List<Color> moreColor;
@@ -32,7 +33,7 @@ final List<ShoeData> listShoe = [
     price: 15,
     image: 'asset/image/shoe1.webp',
     color: Colors.black,
-    counter: 1,
+    counter: 1.obs,
     description:
         'Lightweight running shoes have come a long way as both racing flats and daily trainers. Once upon a time, to shave grams on a shoe and get it down to a competitive weight, brands had to make considerable compromises in comfort and stability—but that’s no longer the case. Thanks to lighter midsole foams and meshy upper materials, some of our favorite supportive and maximally cushioned shoes now sit well below 8 ounces on the scale.',
     favorite: false,
@@ -55,7 +56,7 @@ final List<ShoeData> listShoe = [
     price: 15,
     image: 'asset/image/shoe2.webp',
     color: Colors.orange,
-    counter: 1,
+    counter: 1.obs,
     description:
         'Lightweight running shoes have come a long way as both racing flats and daily trainers. Once upon a time, to shave grams on a shoe and get it down to a competitive weight, brands had to make considerable compromises in comfort and stability—but that’s no longer the case. Thanks to lighter midsole foams and meshy upper materials, some of our favorite supportive and maximally cushioned shoes now sit well below 8 ounces on the scale.',
     favorite: false,
@@ -78,7 +79,7 @@ final List<ShoeData> listShoe = [
     price: 15,
     image: 'asset/image/shoe3.webp',
     color: Colors.red,
-    counter: 1,
+    counter: 1.obs,
     description:
         'Lightweight running shoes have come a long way as both racing flats and daily trainers. Once upon a time, to shave grams on a shoe and get it down to a competitive weight, brands had to make considerable compromises in comfort and stability—but that’s no longer the case. Thanks to lighter midsole foams and meshy upper materials, some of our favorite supportive and maximally cushioned shoes now sit well below 8 ounces on the scale.',
     favorite: false,
@@ -101,7 +102,7 @@ final List<ShoeData> listShoe = [
     price: 15,
     image: 'asset/image/shoe5.webp',
     color: Colors.blue,
-    counter: 1,
+    counter: 1.obs,
     description:
         'Lightweight running shoes have come a long way as both racing flats and daily trainers. Once upon a time, to shave grams on a shoe and get it down to a competitive weight, brands had to make considerable compromises in comfort and stability—but that’s no longer the case. Thanks to lighter midsole foams and meshy upper materials, some of our favorite supportive and maximally cushioned shoes now sit well below 8 ounces on the scale.',
     favorite: false,

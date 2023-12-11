@@ -1,9 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:simple_shadow/simple_shadow.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:state_management/controller/product_controller.dart';
+import 'package:state_management/view/cart_screen.dart';
 import '../model/category_model.dart';
 import '../model/shoe_model.dart';
 import '../widget/category.dart';
@@ -12,8 +13,8 @@ import '../widget/shoe_item.dart';
 import 'deatail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
+  HomeScreen({super.key});
+  final ProductController controller = Get.put(ProductController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,12 +36,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                   child: ListView(
                     children: [
-                      const Padding(
+                      Padding(
                         padding: EdgeInsets.only(left: 15, right: 15),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
+                            const Text(
                               'Discover',
                               style: TextStyle(
                                 fontSize: 35,
@@ -48,12 +49,16 @@ class HomeScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            badges.Badge(
-                              badgeContent: Text('3'),
-                              child: Icon(
-                                Icons.shopping_cart,
-                                color: Colors.white,
-                                size: 30,
+                            GestureDetector(
+                              onTap: () => Get.to(CartScreen()),
+                              child: badges.Badge(
+                                badgeContent: Obx(() =>
+                                    Text('${controller.listCart.length}')),
+                                child: const Icon(
+                                  Icons.shopping_cart,
+                                  color: Colors.white,
+                                  size: 30,
+                                ),
                               ),
                             )
                           ],
@@ -90,6 +95,7 @@ class HomeScreen extends StatelessWidget {
                             border: Border.all(width: 1),
                           ),
                           child: SingleChildScrollView(
+                            primary: false,
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
@@ -124,7 +130,7 @@ class HomeScreen extends StatelessWidget {
                                         Text(
                                           listShoe[index].name,
                                           style: const TextStyle(
-                                            fontSize: 25,
+                                            fontSize: 20,
                                             fontWeight: FontWeight.bold,
                                             fontFamily: 'Lato',
                                           ),

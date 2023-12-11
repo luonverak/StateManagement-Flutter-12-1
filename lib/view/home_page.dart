@@ -10,9 +10,9 @@ class HomePage extends StatelessWidget {
 
   final RxInt _selectedIndex = 0.obs;
 
-  final List tabItems = const [
+  final List tabItems = [
     HomeScreen(),
-    SearchScreen(),
+    const SearchScreen(),
   ];
 
   @override

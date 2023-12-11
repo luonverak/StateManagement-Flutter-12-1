@@ -47,7 +47,7 @@ Widget shoeItem(BuildContext context, ShoeData data) {
                   Text(
                     data.name,
                     style: const TextStyle(
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Lato',
                     ),
