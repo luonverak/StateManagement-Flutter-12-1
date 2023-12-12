@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:simple_shadow/simple_shadow.dart';
+import 'package:state_management/controller/product_controller.dart';
 
 import '../model/shoe_model.dart';
 import '../view/deatail_screen.dart';
 
 Widget shoeItem(BuildContext context, ShoeData data) {
+  final ProductController controller = Get.put(ProductController());
   return Container(
     decoration: BoxDecoration(
       color: Colors.white,
@@ -84,16 +87,21 @@ Widget shoeItem(BuildContext context, ShoeData data) {
                 const SizedBox(
                   width: 5,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.black,
-                  ),
-                  child: const Padding(
-                    padding: EdgeInsets.all(5.0),
-                    child: Icon(
-                      Icons.shopping_cart,
-                      color: Colors.white,
+                GestureDetector(
+                  onTap: () async {
+                    controller.addCart(data);
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.black,
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.all(5.0),
+                      child: Icon(
+                        Icons.shopping_cart,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 )
