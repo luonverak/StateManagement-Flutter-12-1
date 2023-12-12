@@ -14,9 +14,13 @@ class CartScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Cart Item'),
       ),
-      body: ListView.builder(
-        itemCount: controller.listCart.length,
-        itemBuilder: (context, index) => itemCart(controller.listCart[index]),
+      body: Obx(
+        () => ListView.builder(
+          itemCount: controller.listCart.length,
+          itemBuilder: (context, index) => itemCart(
+            controller.listCart[index],
+          ),
+        ),
       ),
     );
   }

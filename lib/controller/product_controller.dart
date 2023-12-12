@@ -3,6 +3,7 @@ import 'package:state_management/model/shoe_model.dart';
 
 class ProductController extends GetxController {
   RxList<ShoeData> listCart = <ShoeData>[].obs;
+  
   void addCart(ShoeData data) async {
     listCart.add(data);
     update();
